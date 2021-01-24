@@ -1,15 +1,12 @@
 package com.listenergao.kotlinsimple.entity
 
-class User {
-    var username: String? = null
-    var password: String? = null
-    var code: String? = null
+data class User constructor(var username: String?, var password: String?, var code: String?) {
 
-    constructor()
+    /**
+     * 次级构造函数，直接在类中写的构造函数为主构造函数，一个类中只允许一个主构造函数，
+     * 可以有多个次级构造函数
+     *
+     */
+    constructor() : this(null, null, null)
 
-    constructor(username: String, password: String, code: String) {
-        this.username = username
-        this.password = password
-        this.code = code
-    }
 }

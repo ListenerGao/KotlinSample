@@ -12,11 +12,11 @@ import com.listenergao.base.utils.dp2px
 import com.listenergao.kotlinsimple.R
 import java.util.*
 
-class CodeView : AppCompatTextView {
+class CodeView constructor(context: Context): AppCompatTextView(context, null) {
 
-    constructor(context: Context) : super(context, null)
+//    constructor(context: Context) : super(context, null)
 
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
+    constructor(context: Context, attrs: AttributeSet?) : this(context)
 
     private val paint: Paint = Paint()
 
