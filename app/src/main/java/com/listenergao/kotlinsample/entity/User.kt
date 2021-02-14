@@ -1,4 +1,4 @@
-package com.listenergao.kotlinsimple.entity
+package com.listenergao.kotlinsample.entity
 
 data class User constructor(var username: String?, var password: String?, var code: String?) {
 

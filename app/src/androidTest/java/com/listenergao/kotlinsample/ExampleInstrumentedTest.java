@@ -1,4 +1,4 @@
-package com.listenergao.kotlinsimple;
+package com.listenergao.kotlinsample;
 
 import android.content.Context;
 

@@ -1,2 +1,2 @@
 include ':app', ':base', ':lesson'
-rootProject.name='KotlinSimple'
+rootProject.name='KotlinSample'

@@ -1,4 +1,4 @@
-package com.listenergao.kotlinsimple
+package com.listenergao.kotlinsample
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,8 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.listenergao.base.utils.CacheUtils
 import com.listenergao.base.utils.Utils
-import com.listenergao.kotlinsimple.entity.User
-import com.listenergao.kotlinsimple.widget.CodeView
+import com.listenergao.kotlinsample.entity.User
+import com.listenergao.kotlinsample.widget.CodeView
 import com.listenergao.lesson.LessonActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {

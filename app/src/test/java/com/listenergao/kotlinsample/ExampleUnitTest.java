@@ -1,4 +1,4 @@
-package com.listenergao.kotlinsimple;
+package com.listenergao.kotlinsample;
 
 import org.junit.Test;
 

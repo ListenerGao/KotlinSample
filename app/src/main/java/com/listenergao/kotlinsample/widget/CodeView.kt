@@ -1,4 +1,4 @@
-package com.listenergao.kotlinsimple.widget
+package com.listenergao.kotlinsample.widget
 
 import android.content.Context
 import android.graphics.Canvas
@@ -9,7 +9,7 @@ import android.util.TypedValue
 import android.view.Gravity
 import androidx.appcompat.widget.AppCompatTextView
 import com.listenergao.base.utils.dp2px
-import com.listenergao.kotlinsimple.R
+import com.listenergao.kotlinsample.R
 import java.util.*
 
 class CodeView constructor(context: Context): AppCompatTextView(context, null) {
