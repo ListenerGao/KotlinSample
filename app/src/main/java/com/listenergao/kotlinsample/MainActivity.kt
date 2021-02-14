@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var et_username: EditText
     private lateinit var et_password: EditText
     private lateinit var et_code: EditText
+    private lateinit var codeView: CodeView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +34,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         et_password.setText(CacheUtils.get(passwordKey))
 
         findViewById<Button>(R.id.btn_login).setOnClickListener(this)
-        findViewById<CodeView>(R.id.code_view).setOnClickListener(this)
+
+        codeView = findViewById(R.id.code_view)
+        codeView.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -72,6 +75,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         if (user.password?.length ?: 0 < 4) {
             Utils.toast("密码不合法")
+            return false
+        }
+
+        if (codeView.getCurrentCode() != user.code) {
+            Utils.toast("验证码输入错误")
             return false
         }
 

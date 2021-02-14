@@ -8,17 +8,20 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.Gravity
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.core.content.ContextCompat
 import com.listenergao.base.utils.dp2px
 import com.listenergao.kotlinsample.R
 import java.util.*
 
-class CodeView constructor(context: Context): AppCompatTextView(context, null) {
+class CodeView constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : AppCompatTextView(context, attrs, defStyleAttr) {
 
-//    constructor(context: Context) : super(context, null)
 
-    constructor(context: Context, attrs: AttributeSet?) : this(context)
+    constructor(context: Context) : this(context, null)
+    constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
 
     private val paint: Paint = Paint()
+
+    private var currentCode: String? = null
 
     private val codeList = arrayOf(
             "kotlin",
@@ -34,20 +37,27 @@ class CodeView constructor(context: Context): AppCompatTextView(context, null) {
     init {
         setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
         gravity = Gravity.CENTER
-        setBackgroundColor(context.resources.getColor(R.color.colorPrimary))
+        setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary))
         setTextColor(Color.WHITE)
 
         paint.isAntiAlias = true
         paint.style = Paint.Style.STROKE
-        paint.color = context.resources.getColor(R.color.colorAccent)
+        paint.color = ContextCompat.getColor(context, R.color.colorAccent)
         paint.strokeWidth = dp2px(6f)
+
+        updateCode()
 
 
     }
 
     fun updateCode() {
         val random = Random().nextInt(codeList.size)
-        text = codeList[random]
+        currentCode = codeList[random]
+        text = currentCode
+    }
+
+    fun getCurrentCode():String?{
+        return currentCode
     }
 
     override fun onDraw(canvas: Canvas) {
